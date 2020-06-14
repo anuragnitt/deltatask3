@@ -23,7 +23,7 @@ docker build --tag chatserver:1.0 - < $cwd/dockerfile-chatserver.txt
 docker build --tag chatclient:1.0 - < $cwd/dockerfile-chatclient.txt
 docker-compose -f $cwd/docker-compose.yml up -d
 
-sleep 130s # measured time to let mysql-server set up fully
+sleep 130s # measured time (minimum) to let mysql-server set up fully
 
 chatserver_ip=$(docker-compose -f $cwd/docker-compose.yml exec chatserver bash -c "tac /etc/hosts | awk '{if(NR==1) print $1}' | cut -f1")
 pass='abc123'
