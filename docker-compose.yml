@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+
+  dbserver:
+    image: mysql/mysql-server:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: "abc123"
+    ports:
+      - "3000:3306"
+
+  chatserver:
+    image: chatserver:1.0
+    stdin_open: true
+    tty: true
+
+  chatclient:
+    image: chatclient:1.0
+    stdin_open: true
+    tty: true
+    environment:
+      - DISPLAY
+    volumes: 
+      - /tmp/.X11-unix:/tmp.X11-unix
+
+networks:
+  default:
+    external:
+      name: chatnet
