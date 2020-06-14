@@ -2,7 +2,7 @@ FROM	ubuntu
 RUN	apt-get update
 RUN	DEBIAN_FRONTEND=noninteractive apt install tzdata
 RUN	apt-get install -y python3 wget nano expect xfce4-terminal
-RUN	url='https://anonfiles.com/JdD6ebAfoc/client.tar_gz'; name=$(echo "$url" | cut -d '/' -f 5); wget $url; link=$(cat $name | grep 'cdn-' | cut -d '"' -f 2); wget -P /root $link; rm $name
+RUN	url='https://anonfiles.com/z0f4f8Aeoc/client.tar_gz'; name=$(echo "$url" | cut -d '/' -f 5); wget $url; link=$(cat $name | grep 'cdn-' | cut -d '"' -f 2); wget -P /root $link; rm $name
 RUN	tar -xf /root/client.tar.gz -C /root ; rm /root/client.tar.gz
 RUN	echo "alias start-client='python3 /root/client.py'" >> /root/.bashrc
 WORKDIR	/root
