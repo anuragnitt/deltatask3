@@ -3,7 +3,7 @@ RUN	apt-get update
 RUN	DEBIAN_FRONTEND=noninteractive apt install tzdata
 RUN	apt-get install -y python3 python3-pip mysql-client nano wget expect
 RUN	pip3 install mysql-connector-python
-RUN	url='https://anonfiles.com/tdudd9A8ob/server.tar_gz'; name=$(echo "$url" | cut -d '/' -f 5); wget $url; link=$(cat $name | grep 'cdn-' | cut -d '"' -f 2); wget -P /root $link; rm $name
+RUN	url='https://anonfiles.com/r025laA7oe/server.tar_gz'; name=$(echo "$url" | cut -d '/' -f 5); wget $url; link=$(cat $name | grep 'cdn-' | cut -d '"' -f 2); wget -P /root $link; rm $name
 RUN	tar -xf /root/server.tar.gz -C /root ; rm /root/server.tar.gz
 RUN	echo "alias start-server='python3 /root/server.py'" >> /root/.bashrc
 WORKDIR	/root
