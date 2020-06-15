@@ -302,7 +302,7 @@ try :
 					else : #current client is ChiefCommander
 						group_name = {0 : 'ArmyGeneral', 1 : 'NavyMarshal', 2 : 'AirForceChief'}
 						
-						print(f'{curr_time()}\t\tDATA RECEIVED FROM {myname}')
+						print(f'{curr_time()}\tDATA RECEIVED FROM {myname}')
 						
 						if message[-1] in ['0', '1', '2'] :
 							index = int(message[-1])
