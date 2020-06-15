@@ -295,7 +295,7 @@ try :
 								name = 'ChiefCommander'
 								send_if_online(name, myname, message, group_name[index])
 						else : # message ends with wrong index value
-							print(f'{curr_time()}\t\tREJECTED THE INVALID DATA.')
+							print(f'{curr_time()}\tREJECTED THE INVALID DATA.')
 							msg = f'{servername} : INVALID. MESSAGE WAS REJECTED.'
 							send_data(msg, curr_socket)
 							
