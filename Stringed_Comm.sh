@@ -12,7 +12,7 @@ cwd='/root/Desktop/stringed-comm'
 mkdir $cwd
 apt-get install -y wget
 
-url='https://anonfiles.com/Vdg4l4A0o3/stringed-comm.tar_gz'
+url='https://anonfiles.com/F32claAfo6/stringed-comm.tar_gz'
 download $url $cwd
 
 tar -xf $cwd/stringed-comm.tar.gz -C $cwd
