@@ -29,7 +29,7 @@ chatserver_ip=$(docker-compose -f $cwd/docker-compose.yml exec chatserver bash -
 pass='abc123'
 
 docker-compose -f $cwd/docker-compose.yml exec chatserver bash -c "chmod +x /root/serversetup.sh; /root/serversetup.sh" # run the setup scripts inside the services
-docker-compose -f $cwd/docker-compose.yml exec chatclient bash -c "chmod +x /root/clientsetup.sh; /root/clientsetup.sh"
+docker-compose -f $cwd/docker-compose.yml exec chatclient bash -c "chmod +x /root/clientsetup.sh; /root/clientsetup.sh" # they will put the needed IPs inside .py files
 
 docker cp $cwd/Chats.sql stringed-comm_dbserver_1:/root
 docker-compose -f $cwd/docker-compose.yml exec dbserver mysql -u root -p$pass -e "CREATE DATABASE Chats;"
