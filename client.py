@@ -16,7 +16,7 @@ CHATSERVER_IP = ''
 PORT = 3001
 
 try :
-	PORT_c = input('Enter a port number to connect input window\nPORT : ')
+	PORT_c = int(input('Enter a port number to connect input window\nPORT : '))
 except ValueError :
 	print('TRY AGAIN WITH AN INTEGER VALUE.')
 	sys.exit()
